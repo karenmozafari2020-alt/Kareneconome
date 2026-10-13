@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.karen'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url = 'https://repo.md-5.net/content/repositories/snapshots/'
+    }
+
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    compileOnly('org.spigotmc:spigot-api:1.10.2-R0.1-SNAPSHOT') {
+        exclude group: 'net.md-5', module: 'bungeecord-chat'
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('jar') {
+    archiveFileName = 'KarenEconomy-1.10.2.jar'
+}
