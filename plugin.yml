@@ -1,0 +1,18 @@
+name: KarenEconomy
+main: com.karen.economy.KarenEconomy
+version: 1.0.0
+author: Karen
+commands:
+  money:
+    description: Show balance
+  shop:
+    description: Show selling prices
+  sell:
+    description: Sell one item from your hand
+  pay:
+    description: Pay an online player
+  eco:
+    description: Admin balance controls
+permissions:
+  kareneconomy.admin:
+    default: op
